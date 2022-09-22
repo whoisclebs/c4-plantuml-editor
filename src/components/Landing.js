@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import CodeEditorWindow from "./CodeEditorWindow";
 import { classnames } from "../utils/general";
 import plantumlEncoder from 'plantuml-encoder';
-import "react-toastify/dist/ReactToastify.css";
 
 import { defineTheme } from "../lib/defineTheme";
 import useKeyPress from "../hooks/useKeyPress";
