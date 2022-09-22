@@ -4,7 +4,6 @@ import { classnames } from "../utils/general";
 import plantumlEncoder from 'plantuml-encoder';
 
 import { defineTheme } from "../lib/defineTheme";
-import useKeyPress from "../hooks/useKeyPress";
 import Footer from "./Footer";
 
 const c4Default = 
@@ -22,17 +21,6 @@ const Landing = () => {
   const [processing, setProcessing] = useState(null);
   const [theme, setTheme] = useState("cobalt");
 
-  const enterPress = useKeyPress("Enter");
-  const ctrlPress = useKeyPress("Control");
-
-
-  useEffect(() => {
-    if (enterPress && ctrlPress) {
-      console.log("enterPress", enterPress);
-      console.log("ctrlPress", ctrlPress);
-      handleCompile();
-    }
-  }, [ctrlPress, enterPress]);
   const onChange = (action, data) => {
     switch (action) {
       case "code": {
@@ -58,7 +46,6 @@ const Landing = () => {
     setUrl(url);
     setProcessing(false);
   };
-
 
   useEffect(() => {
     defineTheme("oceanic-next").then((_) =>
